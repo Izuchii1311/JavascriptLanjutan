@@ -1,0 +1,365 @@
+Javascript.
+
+Ctrl + Alt + J = Shortcut Open Console di Web Browser;
+
+
+Tipe data Javascript :
+- Number
+    Tidak ada int di dalam js, hanya ada floating point (number).
+    Jika menggunakan number diawali dengan 0 maka 022 akan menjadi 18. Karena bilangan akan dianggap sebagai bilangan oktal. Dan juga 0xFF akan dianggap sebagai bilangan hexa 255.
+        Angka Special :
+            Infinity
+            -Infinity
+            NaN (Not a Number)
+
+        *sebuah bilangan dibagi dangan string angka maka string akan di proses sebagai angka.
+
+
+        Operator :
+            aritmatika      ( +, -, *, /, % )
+            penugasan       ( =, +=, -=, *=, /=, %= )
+            perbandingan    ( ==, !=, ===, !==, >, <, >=, <= )
+            logika          ( && and "keduanya harus true", || or "salah satunya benar", ! not )
+            string          ( + )
+                            10 + 10 + "10" = "2010"
+                            "10" + 10 + 10 = "101010"
+            kondisional     ( (kondisi) ? true : false )
+            typeof          ( typeof(operand) )
+                            *memeriksa tipe data dari sebuah nilai.
+
+    Unary = memerlukan 1 operand.
+    Binary = memerlukan 2 operand.
+    Ternary = memerlukan 3 operand.
+
+- String ( " ", ' ' )
+    escape charachter \" atau \'
+    concatenation   +
+    membandingkan 2 buah string ==, ===
+    .length = menghitung panjang string (spasi akan dihitung juga).
+
+- Boolean ( true atau false )
+    Boolean(nilai)
+
+- Object
+- Function
+- Undefined
+
+
+Undefined   = nilai variabel yang belum diisikan.
+Null        = nilai kosong.
+
+Variabel
+    deklarasi = mendaftarkan variabel kedalam lingkup yang sesuai. ( var, let, const )
+    inisialisasi = menyediakan memori untuk variabel.
+    assignment = untuk menetapkan nilai untuk variabel
+
+    var x;          // deklarasi & inisialisasi
+    x = 20;         // deklarasi, inisialisasi, & assignment.
+
+    console.log()   = digunakan untuk menuliskan sesuatu ke dalam console.
+
+
+Pop Up Box
+    alert("Hello World");
+    prompt("Siapa Nama Anda : ");           // mengembalikan nilai inputan
+    confirm("Are you sure?");               // mengembalikan true or false.
+
+Controll Flow
+    Pengulangan (Looping) = mengeksekusi statement secara berulang.
+        for
+        while
+        do while
+
+    Pengkondisian = sebuah keadaan dimana program bisa memilih statement yang berbeda berdasarkan kondisi yang diberikan.
+        if
+        if else
+        if else if else
+        switch
+
+
+Function, kunci utama pada js yang membuatnya menjadi powerfull.
+    > program yang ada di dalam program lainnya, yang dapat dipanggil.
+    > Fundamental building bloks javascript.
+    > Kumpulan statement untuk melakukan tugas.
+
+    kategori function :
+    > built-in Function (bawaan javascript)
+    > User-Definded Function (yang dibuat oleh user)
+        + Function Deklaration
+            function jumlah(a, b) {
+                ...
+            }
+
+        + Function Expression
+            var jumlah = function(a, b) {
+                ...
+            }
+
+            - harus didefinisikan terlebih dahulu.
+            - sebagai closure
+            - sebagai argument untuk function lain.
+
+        *run function
+            ex : alert(jumlah(2, 5));
+
+    *parameter variabel di dalam kurung function, argument nilai yang dikirimkan ke parameter.
+    *jika parameter > banyak dari argument (undefined), tapi jika argument > parameter maka (diabaikan).
+        return arguments = mengembalikan array dari argument yang dimasukkan/
+    *return mengembalikan nilai & merupakan cara memberhentikan function.
+
+
+Refactoring, mengubah code menjadi lebih baik tanpa merubah functional code.
+
+
+Scope (Ruang lingkup).
+    > Block Scope
+    > Function Scope
+        "use strict";           // membersihkan variabel local yang menjadi variabel global. misalkan a = 20 di dalam function.
+
+
+Rekursif, sebuah fungsi yang memanggil dirinya sendiri.
+    BaseCase, kondisi akhir rekursif yang menghasilkan nilai.
+    Faktorial.
+
+
+Array, tipe data yang digunakan untuk mendeskripsikan kumpulan element (key & value).
+    - Bisa menampung lebih dari 1 nilai.
+    - variabel yang lebih sakti.
+    - key adalah index yang dimulai dari 0.
+    - array berupa tipe-nya object
+
+    Manipulate Array
+        + add element array
+        + delete element array
+        + show all element array
+
+        Array Method
+            > length    = menghitung jumlah.
+            > join      = menggabungkan seluruh isi array, dan mengubahnya menjadi string.
+            > push      = menambah element baru array diakhir.
+            > pop       = menghilangkan element terakhir dari sebuah array.
+            > shift     = menghilangkan element pertama dari sebuah array.
+            > unshift   = menambah element baru array diawal.
+            > slice     = mengambil beberapa bagian untuk membuat array baru.
+                          slice(index awal - akan terbawa, index akhir)
+            > splice    = menyisipkan sebuah element di tengah tengah.
+                          splice(index awal, mauDihapusBerapa, elementbaru1, elementabaru2)
+            > foreach   = mengembalikan element array secara keseluruhan.
+            > map       = map mengembalikan nilai array.
+            > sort      = mengurutkan isi array.
+                          *tapi cukup unik jika mengurutkan angka 10 keatas harus dengan function berikut.
+                            angka.sort(function(a, b) {
+                                return a - b;
+                            });
+            > filter    = mencari dengan mengembalikan banyak nilai (array).
+            > find      = mencari dengan mengembalikan 1 nilai.
+
+
+Object, kumpulan nilai yang memiliki nama.
+    - array yang lebih sakti.
+    - jika array menggunakan [ ... ], object menggunakan { ... }.
+    - bisa kita beri nama juga, dan menyimpan function di dalamnya.
+    - variabel yang berada di dalam object 'property'.
+    - function yang berada di dalam object 'method'.
+
+        ex  : var mhs = {};
+              mhs.nama = "Luthfi";
+              console.log(mhs.nama);
+
+        Membuat object
+            + secara literal atau biasa.
+            + menggunakan function declaration.
+                - buat variabel untuk menerima object (objec kosong).
+                - return variabel tersebut
+            + menggunakan constructor function.
+                - khusus untuk membuat object
+                - agar sama dengan bahasa lain dan membedakannya biasanya diawali dengan huruf besar.
+                - tidak memerlukan variabel kosong & return cukup dengan this
+                - saat pemanggilan gunakan var mhs = new Mahasiswa();
+
+                    this, sebuah keyword spesial yang secara otomatis itu didefinisikan pada setiap function.
+                        *setiap membuat object dengan cara apapun ada this yang didefinisikan.
+
+                        jika di dalam object literal this mengembalikan object yang bersangkutan.
+                        jika di dalam function declaration this mengembalikan object global (window).
+                        jika di dalam constructor function this mengembalikan object yang baru dibuat
+                            (object yang baru dibuat yang diawali dengan keyword 'new').
+
+            + object.create().
+
+
+
+
+
+Javascript DOM (Document Object Model).
+
+DOM (Document Object Model), Representasi element HTML pada dokumen menjadi sebuah Object.
+    console.log(document);
+
+    DOM tree, setiap attribute/element html di sebut node / simpul.
+        *representasi element element html dalam bentuk tree.
+
+        window (bisa mengelola seperti scroll, ukuran webnya, dl)
+            > document (mengelola element html)
+            > history
+            > location
+
+        tipe tipe node focus (element, text, document).
+
+        NodeList vs. HTMLCollection
+        NodeList, memilih lebih dari 1 Node tidak peduli tipe node nya apa.
+            misal : Element <p> dan Text "Node1" ...
+        HTMLCollection, kumpulan node tapi khusus yang tipenya element HTML saja.
+            misal : Element <p> Element <h1> ...
+
+            *keduanya merupakan kumpulan dari node. Strukturnya mirip array.
+            *HTML Collection bersifat live, nodeList tidak.
+
+            Struktur Hierarki Node
+            > root node (document)
+            > parent node (body, head)
+            > child node
+            > children (child tapi element html)
+            > siblings (child yang memiliki parent yang sama)
+
+
+DOM Selection
+    Memilih element element html dengan menggunakan javascript.
+
+    > getElementById()          = memilih element berdasarkan id.
+    > getElementsByTagName()    = memilih element element yang memiliki nama tag tertentu (boleh lebih dari satu).
+        *memilih semua element yang dicari.
+        *bebentuk seperti array dan dimulai dari index 0.
+        *kita tidak bisa langsung memberikan style karena berupa array, yang bisa diberi style hanya element saja.
+        *agar bisa berikan style panggil juga indexnya.
+        *jika ingin semuanya bisa dengan menggunakan looping dengan length.
+    > getElementsByClassName()  = memilih element yang memiliki class tertentu (boleh lebih dari satu).
+    > querySelector()           = mencari element berdasarkan selector.
+        *bisa dianggap dengan mencari selector di css.
+        *menangkap 1 selector yang pertama dia temui
+        misalkan : querySelector('#header h1');
+        Contoh menangkap element tanpa ada selectornya
+            const sMerah = document.querySelector('input[name=sMerah]');
+    > querySelectorAll()        = memilih semua element berdasar selector.
+
+    > getElementById()          = Element
+    > getElementsByTagName()    = HTMLCollection
+    > getElementsByClassName()  = HTMLCollection
+    > querySelector()           = Element
+    > querySelectorAll()        = NodeList
+
+    *sebelumnya diawali dengan node rootnya (document).
+    *jika kita menambahkan style pada element htmlnya. Maka akan menambahkan inline Css pada element HTML-nya.
+        judul.style.color = 'red';
+
+        merubah text element HTMLnya
+        judul.innerHTML = 'Ganti Text Pada Element';
+
+        Mengubah Node Root, merubah parent utamanya dengan membaginya ke dalam beberapa bagian.
+        Contoh :
+            const sectionB = document.getElementById('b');
+            const p4 = sectionB.getElementsByTagName('p');
+            p4[0].style.backgroundColor = 'yellow';
+
+
+DOM Manipulation
+    > Manipulasi Element
+        - element.innerHMTL         = merubah isi dari sebuah tag yang sudah di seleksi.
+        - element.style.<property>  = merubah style yang sudah kita seleksi.
+        - element.setAttribute()    = memanipulasi attribute pada sebuah element.
+            + getAttribute()            = melihat isi attribute.
+            + setAttribute()            = tambahkan attribute
+            + removeAttribute()         = hapus attribute
+
+            *atribute seperti id, class, href, name, label.
+            contoh : judul.setAttribute('name', 'Hello World');
+        - element.classList         = memanipulasi untuk mengelola class.
+            + classList.add()           = menambah class baru.
+            + classList.remove()        = menghapus class yang ada.
+            + classList.toggle()        = jika class tersebut belum ada maka akan ditambahkan, jika ada akan dihapus.
+            + classList.item()          = mengetahui class tetentu di dalam item / urutan item.
+            + classList.contains()      = mengecek sebuah class tertentu / mencari class tertentu.
+            + classList.replace()       = mengganti class yang ada dengan class yang baru (classlama, classbaru).
+
+    > Manipulasi Node, memungkinkan bisa menambahkan node baru / element baru.
+        - document.createElement()      = membuat element baru (parent - element).
+        - document.create.TextNode()    = membuat text element baru (child - textNode)
+        - node.appendChild()            = menambahkan child ke dalam elementnya (diakhir).
+        - node.insertBefore()           = menambahkan sebelum ('nodeBaru', 'nodeLama')
+        - parentNode.removeChild()      = menghapus node
+        - parentNode.replaceChild()     = mengganti node lama dengan node baru ('nodeBaru', 'nodeLama')
+
+
+    DOM Events, sebuah kejadian yang nantinya akan terjadi di dalam DOM, misalkan ketika di klik dll.
+        Events != even
+
+        > Event Handler (Cara Lama) - onclick
+            - Inline HTML Attribute     (Akan mencampur aduk html & js, dengan menaruhnya di html langsung)
+            - Element Method
+        > addEventListener()
+
+            *perbedaannya adalah ketika kita memberikan lebih dari 1 perubahan pada lebih dari 1 event.
+                jika kita menggunakan event handler perubahan yang terakhir dilakukan akan menimpa perubahan sebelumnya.
+                sedangkan addEventListener() akan menambah.
+
+                > Event List, (mouse event, keyboard, resources, focus, view, form, dll)
+                    contoh : mouse event (click, dblclick, mouseover, mouseenter, mouseup, wheel).
+
+
+    *after() akan menampilkan / menambahkan data atau element setelahnya.
+        misal di latihan.js : tUbahWarna.after(tombol);
+        *maka akan menyimpan tombol setelah tUbahWarna
+
+        fungsi pembulatan js / untuk menghilangkan angka koma setelah random number
+            round   = pembulatan ke angka terdekat
+            floor   = pembulatan kebawah
+            ceil    = pembulatan ke atas
+
+            window.innerWidth   = untuk mengetahui ukuran document.
+
+DOM Traversal (Penelusuran DOM)
+    menelusuri elementnya berdasarkan element yang diseleksi di awal.
+    menelusuri siapa parentnya dengan menggunakan parentElement
+
+    DOM Traversal method
+        > parentNode                    -> node
+        > parentElement                 -> element
+        > nextSibling                   -> node
+        > nextElementSibling            -> element
+        > previousSibling               -> node
+        > previousElementSibling        -> element
+            *node bisa saja mengambil enter
+
+    Prevent Default
+        adalah sebuah method yang ada di dalam sebuah object. misalkan function(e){...}
+        object yang dimaksud adalah e, dengan tujuannya adalah untuk menghentikan aksi default yang dilakukan oleh element.
+
+        Misalnya kita membuat tombol close
+            <!-- <span class="close">×</span> -->
+            <a href="" class="close">×</a>
+
+            *kita ubah dengan menggunakan a.
+            karena dengan menggunakan a maka akan memindahkan ke halaman lain, maka akan berkedip(refresh halaman).
+            maka dengan kita menuliskan misalkan.
+            e.preventDefault();
+                maka aksi a ketika di klik, tidak akan berkedip atau merefresh halamannya.
+
+
+    Event Bubling
+        dalam kasus traversal, kita sudah memberikan class close, dan kita sudah memberikan event pada sebuah element. Maka event tersebut akan berlaku untuk element element pembungkusnya juga. Dan akan berlaku juga untuk event pembungkusnya juga.
+        Event Bubling ini juga sangat terpakai untuk menangani kasus yang dinamis / menambahkan element secara inspect. Karena jika kita menggunakan selectorAll maka berbentuk node dan jumlahnya pasti sama dengan jumlah awalnya.
+
+        Maka oleh begitu event bubling akan menangkap element pembungkus terluarnya, lalu ketika di klik jalankan fungsi yang mengecek jika ada className dengan nama ... maka lakukan sesuatu.
+
+
+
+
+
+-- Advanced Javascript
+
+Object (Revisited)
+    1. Prototype
+        > Object literal
+        > Function declaration
+        > Constructor function
+        > Object.create()
