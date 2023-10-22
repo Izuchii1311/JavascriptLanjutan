@@ -357,9 +357,53 @@ DOM Traversal (Penelusuran DOM)
 
 -- Advanced Javascript
 
-Object (Revisited)
-    1. Prototype
+1. Prototype
+    Object (Revisited)
         > Object literal
         > Function declaration
         > Constructor function
         > Object.create()
+
+2. Closure
+    > Execution Context (saat program di jalankan)
+        2 Fase pada Execution Context.
+            - Creation Phase
+            - Execution Phase
+    > Hoisting
+        Menaikkan variabel ke paling atas dan juga function. Hoisting sama seperti kita menaikkan bendera.
+        js akan mengecek apakah ada var atau function. jika ada dia akan membuat nama variabel & akan diisi dengan udefined jika ada function maka akan diisi function itu sendiri.
+            var nama = undefined;            -> nilai diisi dengan undefined
+            nama function = fn()             -> mengembalikan function itu sendiri
+
+            *ini merupakan konsep Hoisting.
+            Meskipun kita menuliskan dibawah secara otomatis akan dinaikkan ke atas.
+            Selain 2 hal diatas ada juga yang didefinisikan.
+                window = global Object
+                this = window
+    > Scope
+
+    Closure
+        Merupakan kombinasi antar function dan lingkungan leksikal (lexical scope) di dalam function tersebut.
+        Sebuah function ketika memiliki akses ke parent scope-nya, meskipun parent scope-nya sudah selesai dieksekusi.
+        kemampuan suatu fungsi (function) untuk mengakses variabel-variabel yang ada di luar fungsi tersebut, bahkan setelah fungsi tersebut selesai dieksekusi.
+
+            *sebuah function bisa memiliki function di dalamnya, tapi kasus tersebut bukan sebuah closure, akan disebut closure jika di dalamnya memiliki akses ke parent scopenya.
+
+            *jadi closure itu di dalam sebuah function memiliki function lagi yang dapat mengakses parent scope nya, meskipun functionnya sudah selesai dieksekusi.
+
+        Lexical Scope
+            *inner function, itu bisa memiliki akses ke parent variabel-nya, hingga mencarinya ke window.
+            *bisa mengakses variabel di luar functionnya.
+            *inner function membutuhkan variabel di parent scopenya maka disebut dengan (closure)
+
+            Misalkan :
+                function init() {
+                    let nama = "Luthfi";                        // Local variabel
+
+                        function tampilNama() {                 // Inner Function (closure)
+                            console.log(nama);                  // Akses ke parent variabel
+                        }
+
+                    tampilNama();
+                }
+                init();
