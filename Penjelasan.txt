@@ -407,3 +407,32 @@ DOM Traversal (Penelusuran DOM)
                     tampilNama();
                 }
                 init();
+
+
+Arrow Function
+    Arrow function tidak menganut konsep this, sehingga jika kita menggunakan this di dalam arrow function ia akan memanggil ke lexical scope nya. kapan ini digunakan bisanaya kita menggunakan this untuk memanggil data dalam konteks lexical scope.
+
+    Misalkan kita menggunakan object literal yang dimana object ini tidak memiliki this layaknya function.
+    ketika di dalamnya kita memiliki method dengan arrow function dan kita memangilnya dengan this maka akan mencarinya dalam konteks GLOBAL / window.
+    namun ketika di dalamnya memiliki method dengan anonymouse function maka this akan mencari ke lexical scope nya.
+
+    Tapi jika di dalam function constructor dimana kita memiliki this, namun di dalamnya kita memiliki function yang otomatis di jalankan misalkan setInterval() lalu kita jalankan function seperti biasa di dalamnya dan mengarahkan this, maka this yang dimaksud akan ke konsep global nya.
+    Namun jika kita gunakan arrow function maka konteks yang dimaksud akan function constructornya.
+
+
+
+High Order Function
+    High Order Function : > Function yang beroperasi pada function lain.
+                            Baik itu digunakan dalam argument, maupun return value.
+
+    First Class Function
+        Javascript memperlakukan function seperti object. Yang dimana berarti function sama seperti value / int atau string, maka function juga dapat kita simpan sebagai argument, atau return value dari function yang lain.
+
+        contoh : function kerjakanTugas (mataKuliah, selesai) { ... selesai();}
+                 function selesai () { ... }
+            *function kerjakanTugas disebut dengan High Order Function
+            *selesai disebut dengan callback.
+                callback = function yang disimpan sebagai argument.
+
+    Kenapa High Order Function ?
+        - Abstraksi, untuk membuat agar code yang dibuat lebih simple.
