@@ -435,4 +435,11 @@ High Order Function
                 callback = function yang disimpan sebagai argument.
 
     Kenapa High Order Function ?
-        - Abstraksi, untuk membuat agar code yang dibuat lebih simple.
+        - Abstraksi, untuk membuat agar code yang dibuat lebih simple / sederhana.
+
+        Array.prototype.map()           > memetakan setiap element arraynya kedalam setiap function sendiri dengan  memiliki callback dan akan menghasilkan array baru.
+            Map vs. forEach
+            *Map menghasilkan array baru.
+            *Foreach tidak mengasilkan array baru.
+        Array.prototype.filter()        > akan melakukan filter dan menghasilkan array baru hasil dari filternya.
+        Array.prototype.reduce()        > menggabungkan semua array baru menjadi 1 utuh dan tetap menghasilkan array baru.
