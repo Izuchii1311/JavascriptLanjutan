@@ -443,3 +443,20 @@ High Order Function
             *Foreach tidak mengasilkan array baru.
         Array.prototype.filter()        > akan melakukan filter dan menghasilkan array baru hasil dari filternya.
         Array.prototype.reduce()        > menggabungkan semua array baru menjadi 1 utuh dan tetap menghasilkan array baru.
+
+
+Template Literals / Template String.
+    Template literal adalah string literal yang memungkinkan ada expression di dalamnya.
+
+    String Literal.
+        > bisa menggunakan ' ', " ", atau ` `
+        *dengan menggunakan back tick memungkinkan kita untuk membuat template literal.
+
+    Template Literal
+        > menggunakan ` `
+        > Multi-line string (bisa menambahkan enter atau new line tanpa concatenation)
+        > Embedded Expression (${expression})
+        > HTML Fragments (misalkan kita menuliskan tag html secara langsung di dalamnya)
+        > Expression Interpolation (Misalkan di dalamnya terdapat penjumlahan jika '' maka tutup dulu lalu gunakan concatenation, tetapi jika menggunakan template literal cukup gunakan ${a + b})
+        > Tagged Templates
+            *Bentuk yang lebih kompleks dari template literals, dimana memungkinkan kita untuk membaca template literals melalui sebuah function.
