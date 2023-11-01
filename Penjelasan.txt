@@ -460,3 +460,113 @@ Template Literals / Template String.
         > Expression Interpolation (Misalkan di dalamnya terdapat penjumlahan jika '' maka tutup dulu lalu gunakan concatenation, tetapi jika menggunakan template literal cukup gunakan ${a + b})
         > Tagged Templates
             *Bentuk yang lebih kompleks dari template literals, dimana memungkinkan kita untuk membaca template literals melalui sebuah function.
+
+
+Destructuring Assignment / Destructuring Variabel
+    Merupakan sebuah expression (syntax) pada javascript yang membuat kita dapat 'membongkar' nilai dari array atau poperty object kedalam variabel yang terpisah.
+
+        Contoh sederhana pada array:
+            const coba = ['satu', 'dua', 'tiga'];
+
+            const [a, b, c] = coba;
+            console.log(a);         // satu
+            console.log(b);         // dua
+            console.log(c);         // tiga
+
+            *begitu pula pada object
+
+
+For .. of Vs. For .. in
+    For of
+        sebuah looping yang bisa mengulang atau menelusuri object object yang iterable.
+        apa aja object iterable ?
+            > String
+            > Array
+            > Arguments / NodeList
+            > Typed Array
+            > Map
+            > Set
+            > User-defined iterables
+
+    For in
+        hanya untuk enumerable (property pada object). Object bisa di looping isinya dengan menggunakan for in.
+
+
+Spread Operator
+    Spread Operator Vs. Rest Parameter
+        *keduanya direpresentasikan dengan ...
+
+        Spread Operator
+            Sebuah operator yang memecah (expand / unpack) iterables menjadi single element.
+
+        Rest Parameter
+            Merepresentasikan argumen pada function dengan jumlah yang tidak terbatas menjadi sebuah array.
+            *hanya bisa digunakan diakhir dari parameternya
+            *hasilnya akan berupa array.
+
+
+Asynchronous Javascript Programming
+
+    Asynchronous Javascript
+        > Callback
+        > Promise
+        > ajax
+        > Async & Await
+
+    Javascript is a single-threaded, non-blocking, asynchronous and concurent language.
+        > Single threaded
+            Thread, urutan eksekusi kode yang dapat dilakukan secara bebas / independent satu sama lain.
+                Jika ada 1 task maka menyelesaikan task 1 dahulu baru bisa ke task berikutnya.
+
+        > Blocking
+            Proses eksekusi yang lama.
+                Jika task 1 proses eksekusi nya belum selesai maka tidak bisa ke task berikutnya.
+
+        > Synchronous
+            Menjalankan task seperti biasa.
+        > Asynchronous
+            (single threaded)
+                Task 1 dijalankan dan belum selesai maka threadnya bisa ke task ke 2.
+                Task ke 2 dijalankan dan belum selesai maka threadnya bisa ke task ke 1 ke task 2 hingga pada akhirnya keduanya selesai.
+            (multi thread)
+                kita bisa mengerjakannya bersamaan.
+
+            Asynchronous + Single threaded = Concurency
+            Asynchronous + Multi threaded = Parallelism
+
+            Kesimpulan :
+                Single vs. Multi Threaded
+                    Linkungan eksekusi 'task'
+                Blocking vs. Non-blocking.
+                    Teknik ngoding (IO related)  -> misalkan ketika ketik sesuatu, atau klik sesuatu.
+                Synchronous vs. Asynchronous
+                    Teknik ngoding (HTTP request relates)   -> misalkan ketika ingin menggunakan ajax.
+                Concurrent vs parallel
+                    Lingkungan eksekusi 'task
+
+            V8 Engine = mesin yang menjalankan javascript
+                Heap, Memory Allocation.
+                Stack, Function Call & Execution Context.
+
+                Asynchronous Callback.
+                    (Web API)
+                        > DOM
+                        > ajax (XMLHttpRequest)
+                        > setTimeout
+                        > setInterval
+
+                        *callback akan disimpan di Callback queue atau di antrian Callback queue.
+                    Callback Queue
+                        *EventLoop bertugas untuk mengecek antrian jika ada ambil lalu simpan ke dalam stack jika perintah sebelumnya di stack telah selesai.
+                        > onClick
+                        > onLoad
+                        > $.get
+                        > delay
+
+
+10.1 Callbacks
+    sebuah function yang dikirimkan sebagai paraeter pada function yang lain.
+    function yang dieksekusi setelah fungsi lain dijalankan.
+
+    jika ada error Cors itu kita harus memindahkan file kita ke dalam webserver misalkan htdocs.
+    kita bisa menangani error cors tanpa harus memindahkan ke htdocs, dengan install ekstension vscode live server.

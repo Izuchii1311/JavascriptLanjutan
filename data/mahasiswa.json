@@ -1,0 +1,23 @@
+[
+    {
+        "nama": "Luthfi Nur Ramadhan",
+        "npm": "2142430",
+        "email": "luthfiramadhan.lr55@gmail.com",
+        "jurusan": "Teknik Informatika",
+        "idDosenWali": 1
+    },
+    {
+        "nama": "Rafli Hendarsyah",
+        "npm": "2142433",
+        "email": "plihendarsyah2@gmail.com",
+        "jurusan": "Teknik Informatika",
+        "idDosenWali": 3
+    },
+    {
+        "nama": "Fazar Siddiq Arrizal",
+        "npm": "2142427",
+        "email": "arrizal223@gmail.com",
+        "jurusan": "Teknik Informatika",
+        "idDosenWali": 2
+    }
+]
