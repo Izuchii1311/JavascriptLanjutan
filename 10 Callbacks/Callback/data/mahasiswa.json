@@ -1,0 +1,22 @@
+[
+    {
+        "nama": "Luthfi Nur Ramadhan",
+        "npm": "2142430",
+        "email": "luthfiramadhan.lr55@gmail.com",
+        "jurusan": "Teknik Informatika",
+        "idDosenWali": "1"
+    },
+        {
+        "nama": "Hutao",
+        "npm": "2142431",
+        "email": "hutaooo@gmail.com",
+        "jurusan": "Teknik Informatika",
+        "idDosenWali": "2"
+    },    {
+        "nama": "Huohuo",
+        "npm": "2142432",
+        "email": "huoalchemy@gmail.com",
+        "jurusan": "Design Komunikasi Visual",
+        "idDosenWali": "3"
+    }
+]

@@ -14,12 +14,13 @@
  * 7. User-defined Iterables
  */
 
-// const mhs = ["Luthfi Nur Ramadhan", "Rafli Hendarsyah", "Faizal Rizki Ramdani"];
-// console.log(...mhs);
+// const mhs = ["Luthfi", "Rafli", "Faizal"];
+// console.log(...mhs);         // Luthfi Rafli Faizal
+// console.log(...mhs[0]);      // L u t h f i
 
 /*
     Kapan kita menggunakan Spread Operator ??
-    1. Ketika kita ingin menggabungkan 2 array.
+    1. Ketika kita ingin menggabungkan 2 array dan bisa menyisipkan element array baru di dalam array.
     2. Mengcopy Nilai Pada Array
 */
 
@@ -27,17 +28,22 @@
 // const mhs = ["Luthfi Nur Ramadhan", "Rafli Hendarsyah", "Faizal Rizki Ramdani"];
 // const dosen = ["Girindo Pringgo Digdo", "Gelar Aditya", "Dede Darsono"];
 
-// // const civitas = mhs.concat(dosen);
+// const denganConcat = mhs.concat(dosen);
 
 // // dengan menggunakan spread operator itu akan lebih fleksibel apabila kita ingin menambahkan element array baru.
-// const civitas = [...mhs, "Hutao", ...dosen];
+// const denganSpread = [...mhs, "Hutao", ...dosen];
 
 // console.log(...civitas);
 
 
-// *Meng-copy array
+// *Meng-copy nilai pada array
 // Contoh 1
 // const mhs = ["Luthfi Nur Ramadhan", "Rafli Hendarsyah", "Faizal Rizki Ramdani"];
+// // Jika ditimpa maka mhs dengan index ke 1 akan ditimpa juga dengan "Hutao".
+// const mahasiswa = mhs;
+// mahasiswa[1] = "Hutao";
+
+// // Dengan cara ini maka kita telah mengcopy array dari mhs, dan nilai dengan index tertentu diubah datanya.
 // const mahasiswa = [...mhs];
 // mahasiswa[1] = "Hutao";
 
@@ -49,16 +55,16 @@
 // const data = [];
 
 // for(let i = 0; i < li.length; i ++) {
-//     data.push(li[i].innerHTML)
+//     data.push(li[i].textContent)
 // }
 
 // console.log(...data);
 
 
-// const li = document.querySelectorAll('ul li');
-// // li diubah menjadi array dengan menggunakan spread operator
-// const mhs = [...li].map(m => m.textContent);
-// console.log(mhs);
+const li = document.querySelectorAll('ul li');
+// karena li adalah nodeList maka kita ubah menjadi array dengan menggunakan spread operator.
+const mhs = [...li].map(m => m.textContent);
+console.log(mhs);
 
 
 // Contoh 3
