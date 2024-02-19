@@ -42,11 +42,16 @@
     Untuk menjalankan ini ada 3 fungsi callback yang harus diingat, yaitu :
     callback (resolve / reject / finally)
 
+    untuk menangkap dan menjalankan resolve & rejectnya kita gunakan method .then() atau .catch()
+
     aksi(
-        ketika janji-nya terpenuhi disebut dengan   = then      -> akan menjalankan resolve
-        jika janjinya tidak terpenuhi               = catch     -> akan menjalankan reject
-                                                    = finally   -> biasanya digunakan untuk animasi loading.
+        ketika janji-nya terpenuhi disebut dengan                         = then      -> akan menjalankan resolve
+        jika janjinya tidak terpenuhi                                     = catch     -> akan menjalankan reject
+        dijalankan ketika salah satu then / catch sudah siap dijalankan   = finally   -> biasanya digunakan untuk animasi loading.
     )
+
+    finally = jadi ketika promise nya sudah siap dijalankan & tidak pending maka finally akan ditampilkan.
+
 
     Promise dilakukan biasanya ketika kita mau melakukan request ke API.
 */
