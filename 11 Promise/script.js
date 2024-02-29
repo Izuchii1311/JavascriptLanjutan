@@ -24,9 +24,9 @@
 // xhr.send();
 
 // *Menggunakan fetch
-// fetch('http://www.omdbapi.com/?apikey=5be44a60&s=attack on titan')
-//     .then(response => response.json())
-//     .then(response => console.log(response));
+fetch('http://www.omdbapi.com/?apikey=5be44a60&s=attack on titan')
+    .then(response => response.json())
+    .then(response => console.log(response));
 
 
 
@@ -60,9 +60,9 @@
 // let ditepati = true;
 // const janji1 = new Promise((resolve, reject) => {
 //     if (ditepati) {
-//         resolve('Janji telah ditepati');
+//         resolve('Janji telah ditepati');                 // true
 //     } else {
-//         reject('Ingkar janji');
+//         reject('Ingkar janji');                          // false
 //     }
 // });
 

@@ -43,23 +43,40 @@
 
 // * Fetch (Refactor)
 // Akan memberikan async & await untuk menandakan asynchronous pada function
+// Tarik fetch ke dalam fungsi yang berbeda begitu pula dengan hasilnya.
+// dengan cara ini maka akan menjalankan dengan cara synchronous. Karena ketika dimasukkan ke dalam variabel movies data getMovies belum didapatkan dan keburu ditampilkan oleh console.log()
+
+// Ketika ketemu getMovies maka akan pending karena synchronous.
+// Sebelumnya kita berikan 'await' sehingga dimana statusnya masih pending. Kita tunggu dulu sampe statusnya resolve, baru dimasukkan ke dalam variabel movies.
+
 const searchButton = document.querySelector('.search-button');
 searchButton.addEventListener('click', async function() {
     const inputKeyword = document.querySelector('.input-keyword');
-    // Tarik fetch ke dalam fungsi yang berbeda begitu pula dengan hasilnya.
-    // dengan cara ini maka akan menjalankan dengan cara synchronous. Karena ketika dimasukkan ke dalam variabel movies data getMovies belum didapatkan dan keburu ditampilkan oleh console.log()
-
-    // Ketika ketemu getMovies maka akan pending karena synchronous.
-    // Sebelumnya kita berikan 'await' sehingga dimana statusnya masih pending. Kita tunggu dulu sampe statusnya resolve, baru dimasukkan ke dalam variabel movies.
     const movies = await getMovies(inputKeyword.value);
     updateUI(movies);
 });
+
+
+function getMovies(keyword) {
+    return fetch('http://www.omdbapi.com/?apikey=5be44a60&s=' + keyword)            // Mengembalikan promise
+        .then(response => response.json())
+        .then(response => response.Search);
+}
+
+function updateUI(movies) {
+    let cards = '';
+    movies.forEach(movie => cards += showCards(movie));
+
+    const movieContainer = document.querySelector('.movie-container');
+    movieContainer.innerHTML = cards;
+}
 
 // Kita tidak bisa dengan melakukan cara ini untuk menjalankan detailnya. Karena ini dijalankan saat pertama kali web dibuka sedangkan button ini adanya hanya ketika datanya sudah tampil
 // const modalDetailButton = document.querySelector('.modal-detail-button');
 
 // Kita akan menggunakan yang namanya 'event binding'.
 // Ngasih event ke element yang awanya belum ada, dan ketika ada event nya akan bisa berjalan.
+
 document.addEventListener('click', async function(e) {
     if(e.target.classList.contains('modal-detail-button')) {      // akan menangkap element
         const imdbID = e.target.dataset.imdbid;
@@ -81,19 +98,6 @@ function updateUIDetail(detailVideo) {
     modalBody.innerHTML = detailMovies;
 }
 
-function getMovies(keyword) {
-    return fetch('http://www.omdbapi.com/?apikey=5be44a60&s=' + keyword)            // Mengembalikan promise
-        .then(response => response.json())
-        .then(response => response.Search);
-}
-
-function updateUI(movies) {
-    let cards = '';
-    movies.forEach(movie => cards += showCards(movie));
-
-    const movieContainer = document.querySelector('.movie-container');
-    movieContainer.innerHTML = cards;
-}
 
 function showCards(movie) {
     return `<div class="col-md-4 my-3">

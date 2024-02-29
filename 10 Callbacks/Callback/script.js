@@ -77,7 +77,7 @@
 //     let xhr = new XMLHttpRequest();
 
 //     xhr.onreadystatechange = function() {
-//         if ( xhr.readyState === 4 ) {               // ready
+//         if ( xhr.readyState === 4 ) {                   // ready
 //             if ( xhr.status === 200 ) {                 // Status : OK
 //                 success(xhr.response);
 //             } else if ( xhr.status === 404 ) {          // Status : Page Not Found
@@ -91,7 +91,7 @@
 // }
 
 // getDataMahasiswa('data/mahasiswa.json', result => {
-//     // Success - dan mengembalikan dalam bentuk array of objetc.
+//     // Success - dan mengembalikan dalam bentuk array of object.
 //     // console.log(JSON.parse(result));
 
 //     const mhs = JSON.parse(result);
